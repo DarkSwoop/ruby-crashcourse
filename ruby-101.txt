@@ -1,0 +1,16 @@
+Vortrag
+==============================
+int answer = 42;
+Integer answer2 = new Integer(42);
+String foo = "Hello World";
+List<User> users = new ArrayList<User>();
+Map map = new HashMap();
+
+answer = 42
+answer2 = 42
+foo = "Hello World"
+users = []
+map = {}
+
+
+
