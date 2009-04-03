@@ -1,16 +1,203 @@
 Vortrag
 ==============================
-int answer = 42;
+
+------------------------------
+Hello World
+# java
+System.out.println("Hello World");
+
+# ruby
+puts("Hello World");
+puts("Hello World")
+puts "Hello World"
+
+
+------------------------------
+Variablen
+# java
+int answer = 42; // ich bin ein kommentar
 Integer answer2 = new Integer(42);
 String foo = "Hello World";
-List<User> users = new ArrayList<User>();
+List<String> users = new ArrayList<String>();
+String[] strArray = new String[] {"foo", "bar"};
 Map map = new HashMap();
 
-answer = 42
-answer2 = 42
+# ruby
+answer = 42 # ich bin auch ein kommentar
+answer2 = 42;
 foo = "Hello World"
+str_array = ["foo", "bar"]
 users = []
 map = {}
+
+------------------------------
+Maps & Arrays
+# java
+users.add("foo");
+users.add("bar");
+
+map.put("key", "thevalue");
+map.get("key");
+
+# ruby
+users.push("foo");
+users << "bar"
+map["key"] = "thevalue"
+map["key"]
+map = {"key" => "thevalue"}
+------------------------------
+Iteratoren
+
+for (String s : objects) {
+  System.out.println(s);
+}
+
+# ruby
+objects = ["foo", "bar"]
+for object in objects do |object|
+  puts object
+end
+objects.each {|object| puts object }
+
+-----------------------------
+Kontrollstrukturen (if / else / case)
+int i = 5;
+if (i == 5) {
+  System.out.println("i = 7");
+}
+else if (i == 6) {
+  System.out.println("6");
+}
+else {
+  System.out.println("something else");
+}
+
+i = 5
+if i == 7
+  puts "i = 7"
+elsif i == 6
+  puts "6"
+else
+  puts "something else"
+end
+
+puts 'foo' if i == 5 # => foo
+puts 'bar' unless i == 5 # => 
+------------------------------
+Nil
+
+foo = "bar" # => "bar"
+foo.nil? # => false
+foo = nil # => nil => NilClass.new
+foo.nil? # => true
+nil == false
+
+if foo
+  puts "foo ist nicht false und nicht nil"
+else
+  puts "foo ist false oder nil"
+end
+-------------------------------
+Ruby Kurzformen
+
+i = 5
+if i == 7 then puts "i = 7"
+elsif i == 6 then puts "6"
+else puts "something else"
+end
+
+puts if i == 7 then "i = 7"
+elsif i == 6 then "6"
+else "something else"
+end
+
+puts i == 7 ? "i = 7" : "something else"
+
+-------------------------------
+Funktionen
+
+class Foo {
+  public String function bar {
+    return "bar";
+  }
+}
+
+class Foo 
+  def bar
+    "bar"
+  end
+end
+
+def bar(argument = "default")
+  puts argument
+end
+
+bar() # => default
+bar("nodefault") # => nodefault
+
+# In Ruby keine überladenen Methoden
+def quoz(options={})
+  ...
+end
+
+def foos(arg) 
+  if arg.kind_of? String
+    puts "It is a String"
+  else
+    puts "something else"
+  end
+end 
+-------------------------------
+Proc & Lambda
+
+block = Proc.new {
+  puts "bar"
+}
+
+block.call # => bar
+
+
+def div_tag(class_name)
+  puts "<div class=\"#{class_name}\">"
+  yield
+  puts "</div>"
+end
+
+div_tag('my_class') { puts 'between' }
+# <div class="my_class">
+# between
+# </div>
+
+-------------------------------
+RegExp
+
+/abc/ =~ "This is abc" # => Index des Matches
+/abc/.match("This is abc") #  => MatchData # MatchData.to_s => 'abc'
+puts "found #{$1}" if /abc(\d\d)/ =~ "foo bar abc12 foo" # => found 12
+
+-----------------------------
+
+Stringformatierungen
+
+i = 5
+'bar #{i}' # => bar #{i}
+"bar #{i}" # => bar 5
+
+var = <<-EOS
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+EOS
+
+---------------------------------
+
+Ruby Schönheit
+
+3.down_to(1).each { |i| puts i } # => 321
+["live", "ton", "crap", "si", "evil"].map { |s| s.reverse.capitalize }.reverse.reject { |item| item == "Parc" }.join(' ') # => "Live Is Not Evil"
+[["Java", "is", "nice"], ["is", "Java", "nice"], ["evil", "is", "live"]].transpose.first.join(" ")
+
+
 
 
 
