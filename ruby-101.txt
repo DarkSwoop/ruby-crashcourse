@@ -187,6 +187,7 @@ var = <<-EOS
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  #{i}
 EOS
 
 ---------------------------------
@@ -196,8 +197,4 @@ Ruby Schönheit
 3.down_to(1).each { |i| puts i } # => 321
 ["live", "ton", "crap", "si", "evil"].map { |s| s.reverse.capitalize }.reverse.reject { |item| item == "Parc" }.join(' ') # => "Live Is Not Evil"
 [["Java", "is", "nice"], ["is", "Java", "nice"], ["evil", "is", "live"]].transpose.first.join(" ")
-
-
-
-
 
