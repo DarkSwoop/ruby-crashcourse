@@ -156,10 +156,15 @@ block = Proc.new {
 
 block.call # => bar
 
+def div_tag(class_name, &block)
+  puts "<div class=\"#{class_name}\">"
+  block.call
+  puts "</div>"
+end
 
 def div_tag(class_name)
   puts "<div class=\"#{class_name}\">"
-  yield
+  block.call # oder yield
   puts "</div>"
 end
 
